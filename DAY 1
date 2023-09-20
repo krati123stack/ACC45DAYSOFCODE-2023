@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int X, Y;
+        cin >> X >> Y; // Number of students and number of chairs Chef already has
+
+        // Calculate the minimum number of extra chairs Chef must buy
+        int extra_chairs_needed = max(0, X - Y);
+
+        cout << extra_chairs_needed << endl;
+    }
+
+    return 0;
+}
