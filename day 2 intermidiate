@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int T; // Number of test cases
+    cin >> T;
+
+    while (T--) {
+        int L, V1, V2; // Length of racetrack, tortoise's speed, hare's speed
+        cin >> L >> V1 >> V2;
+
+        double tortoise_time = (double)L / V1;
+        double hare_time = (double)L / V2;
+
+        int rounded_hare_time = ceil(hare_time);
+
+        if (rounded_hare_time <= tortoise_time) {
+            cout << "-1" << endl; // The hare can't win
+        } else {
+            cout << rounded_hare_time - 1 << endl; // The longest time the hare can wait
+        }
+    }
+
+    return 0;
+}
