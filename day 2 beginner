@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int T; // Number of test cases
+    cin >> T;
+
+    while (T--) {
+        int X, Y; // Chef's daily goal and actual chocolates sold
+        cin >> X >> Y;
+
+        int total_amount = 0;
+
+        if (Y <= X) {
+            // Chef sold less than or equal to the daily goal
+            total_amount = Y;
+        } else {
+            // Chef sold more than the daily goal
+            total_amount = X + 2 * (Y - X);
+        }
+
+        cout << total_amount << endl;
+    }
+
+    return 0;
+}
