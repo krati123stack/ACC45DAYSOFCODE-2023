@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int T; // Number of test cases
+    cin >> T;
+
+    while (T--) {
+        int battery_level; // Battery level in percentage
+        cin >> battery_level;
+
+        if (battery_level <= 15) {
+            cout << "Yes" << endl; // Battery is 15% or below
+        } else {
+            cout << "No" << endl; // Battery is above 15%
+        }
+    }
+
+    return 0;
+}
