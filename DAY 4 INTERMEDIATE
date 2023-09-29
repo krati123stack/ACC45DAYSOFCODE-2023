@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+bool isMultipleOfFive(string num) {
+    int lastDigit = num.back() - '0';
+
+    // A number is divisible by 5 if its last digit is 0 or 5
+    return (lastDigit == 0 || lastDigit == 5);
+}
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int D;
+        cin >> D; // Number of digits in N
+        string N;
+        cin >> N; // The number N as a string
+
+        // Check if the number can be rearranged to form a multiple of 5
+        if (isMultipleOfFive(N)) {
+            cout << "Yes" << endl;
+        } else {
+            cout << "No" << endl;
+        }
+    }
+
+    return 0;
+}
