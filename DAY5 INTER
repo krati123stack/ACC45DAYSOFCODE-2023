@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int PA, PB, PC;
+        cin >> PA >> PB >> PC; // Number of people in regions A, B, and C
+
+        // Calculate the maximum number of people that can be invited
+        int max_people = min(PA, min(PB, PC));
+
+        // Exclude people from region B if they are in conflict with A or C
+        if (PB > max_people && (PA != 0 || PC != 0)) {
+            max_people = min(PA, PC);
+        }
+
+        cout << max_people << endl;
+    }
+
+    return 0;
+}
+
